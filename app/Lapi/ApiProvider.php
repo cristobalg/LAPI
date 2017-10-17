@@ -30,7 +30,6 @@ class ApiProvider
         ]);
         if ($res->getStatusCode() == 200) {
             $this->results = json_decode($res->getBody());
-            dd($this->results);
             return true;
         }
         return false;
@@ -38,7 +37,6 @@ class ApiProvider
 
     public function results() {
         $filtered = [];
-        dd($this->results);
         foreach ($this->results->items as $value) {
             $filtered[] = array(
                 'owner name' => $value->repository->owner->login,
