@@ -1,0 +1,2 @@
+$f = factory('App\Query',10)->create();
+$f->each(function($query){ factory('App\Result',50)->create(['query_id' => $query->id]);});
