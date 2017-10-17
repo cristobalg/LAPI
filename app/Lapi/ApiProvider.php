@@ -40,7 +40,10 @@ class ApiProvider
         $filtered = [];
         dd($this->results);
         foreach ($this->results->items as $value) {
-            $filtered[] = array('owner name' => $value->repository->owner->login,'repository' => $value->repository->url, 'filename' => $value->name,
+            $filtered[] = array(
+                'owner name' => $value->repository->owner->login,
+                'repository' => $value->repository->url,
+                'filename' => $value->name,
                 'score' => $value->score);
         }
         return $filtered;
